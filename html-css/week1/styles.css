@@ -270,7 +270,7 @@ button {
 
 }
 
-.name p {
+.name .job {
     margin-bottom: 13px;
     display: inline-block;
     border-bottom: 2px dotted blanchedalmond;
@@ -299,13 +299,16 @@ show up slowly?*/
 
 }
 
-.name p:hover {
+.name .job:hover {
     color: #587dc5;
     transition: all 0.5s;
 
 }
 
-.name p:hover .details {
+.name .job:hover .details {
     display: block;
 
 }
+
+/* question5:why this hidden box 
+cant be seen through the link I submit on slack */
