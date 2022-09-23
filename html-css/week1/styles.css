@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 800px;
+    height: 1000px;
+    background-color: rgb(181, 212, 42);
+    margin: 40px auto;
+}
+
+/* left part */
+.left {
+    position: relative;
+    width: 300px;
+    height: 1000px;
+    background-color: rgb(3, 99, 159);
+    float: left;
+
+}
+
+/* picture */
+img {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-100px);
+    width: 200px;
+    height: 170px;
+    display: block;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 10px 10px 30px 5px rgb(22, 35, 48);
+    border: 5px solid rgb(8, 59, 95);
+    transition: all 0.5s;
+    z-index: 999;
+
+}
+
+.hello {
+    position: absolute;
+    top: 110px;
+    left: 75px;
+    font-family: Apple Chancery, serif;
+    color: #d6a1b6;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+/* Question 1:why the way it moves like from left:50% to  transform: translateX(-100px);
+How can I make it keep fixed and realize zooming */
+.left:hover img {
+    transform: scale(1.2);
+}
+
+/* Title-myname */
+.link a {
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    color: blanchedalmond;
+    border-bottom: 2px dotted rgb(220, 206, 215);
+    display: inline-block;
+    top: 235px;
+    left: 50%;
+    transform: translateX(-90px);
+    text-align: center;
+}
+
+.link a:hover {
+    color: #d6a1b6
+}
+
+/* contact information */
+.contact {
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    /* background-color: rgb(207, 194, 24); */
+    top: 320px;
+    left: 50%;
+    transform: translateX(-125px);
+    padding: 10px 10px 20px 10px;
+    line-height: 2.5em;
+
+
+}
+
+.contact .icon {
+    color: blanchedalmond;
+}
+
+.contact .icon:hover {
+    color: rgb(238, 127, 173);
+    transition: all 0.5s;
+}
+
+.contact .text:hover {
+    color: #dd5572;
+}
+
+
+.left li {
+    list-style: none;
+}
+
+
+li .title {
+    color: blanchedalmond;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.contact .text {
+    color: blanchedalmond;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* skills */
+.skills {
+    position: absolute;
+    width: 250px;
+    height: 325px;
+    /* background-color: rgb(24, 207, 97); */
+    top: 600px;
+    left: 50%;
+    transform: translateX(-125px);
+    padding: 10px 10px 20px 10px;
+    line-height: 2.5em;
+}
+
+.box {
+    width: 150px;
+    height: 12px;
+    border-radius: 12px;
+    background: blanchedalmond;
+    margin-bottom: 10px;
+    margin-top: 2px;
+
+
+}
+
+/* Questin2:why this transition doesn't work*/
+.inside {
+    width: var(--progress);
+    height: 100%;
+    border-radius: 12px 0 0 12px;
+    background: linear-gradient(90deg, rgb(245, 116, 178), rgb(247, 193, 224));
+    transition: width .5s liner;
+
+
+}
+
+.skills .text {
+    color: blanchedalmond;
+    font-weight: 800;
+    font-size: 10px;
+    line-height: 5em;
+
+}
+
+/* right part */
+.right {
+    width: 500px;
+    height: 1000px;
+    background-color: rgb(175, 30, 153);
+    float: right;
+}
+
+/* button */
+/* Question3:why there existed a half border around the button?
+If I set border:2 dotted colore;this  half-border can't be pressed. */
+button {
+    width: 135px;
+    height: 50px;
+    background-color: rgb(84, 129, 202);
+    margin-top: 40px;
+    margin-left: 300px;
+    line-height: 50px;
+    border-radius: 60px;
+    font-size: 18px;
+    font-weight: 700;
+    color: blanchedalmond;
+    font-family: Marker Felt, fantasy, sans-serif;
+    box-shadow: 9px 5px 10px 3px rgb(84, 142, 179);
+    cursor: pointer;
+
+}
+
+/* personal profile */
+.profile {
+    width: 500px;
+    height: 220px;
+    background-color: #d6a1b6;
+    ;
+}
+
+.profile p {
+
+    font-family: Optima, sans-serif;
+    font-weight: 500;
+    color: blanchedalmond;
+    line-height: 2em;
+    padding-left: 45px;
+    margin-top: 15px;
+
+}
+
+/* educational background */
+.education {
+    width: 500px;
+    height: 225px;
+    background-color: #d6a1b6;
+    ;
+}
+
+.education ul {
+    padding-left: 30px;
+    padding-top: 20px;
+
+}
+
+.education .school {
+    margin: 10px;
+    margin-left: 30px;
+    font-family: Optima, sans-serif;
+    font-weight: 500;
+    color: blanchedalmond;
+}
+
+.education .date {
+    list-style: none;
+    margin-left: 40px;
+    margin-top: 5px;
+    font-family: Didot, serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: blanchedalmond;
+}
+
+/* work experience */
+.work {
+    width: 500px;
+    height: 555px;
+    background-color: #d6a1b6;
+
+}
+
+.name {
+    position: relative;
+    width: 450px;
+    height: 125px;
+    /* background-color: rgb(228, 221, 24); */
+    margin: 25px 30px;
+    padding-left: 30px;
+    padding-top: 10px;
+    line-height: 1.8em;
+    font-size: 13px;
+    color: blanchedalmond;
+    font-family: Optima, sans-serif;
+
+
+}
+
+.name p {
+    margin-bottom: 13px;
+    display: inline-block;
+    border-bottom: 2px dotted blanchedalmond;
+    color: blanchedalmond;
+    font-size: 18px;
+
+}
+
+/* a hidden box */
+/* question4:if the .details box change from
+display:none to display:block,why can't I use transition to make it 
+show up slowly?*/
+.details {
+    position: absolute;
+    left: 7px;
+    top: 38px;
+    width: 400px;
+    height: 90px;
+    background-color: #d6a1b6;
+    box-shadow: 5px 3px 8px 3px rgb(134, 87, 101);
+    padding-left: 20px;
+    font-size: 7px;
+    font-family: Optima, sans-serif;
+    color: blanchedalmond;
+    display: none;
+
+}
+
+.name p:hover {
+    color: #587dc5;
+    transition: all 0.5s;
+
+}
+
+.name p:hover .details {
+    display: block;
+
+}
