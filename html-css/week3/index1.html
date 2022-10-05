@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="./styles1.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <img src="./images/icons8-siba-inu-kawaii-240.png" alt="logo" />
+        </div>
+        <form action="" method="get" name="nav" class="nav">
+          <div class="signUp">
+            <input type="radio" id="signUp" name="nav-radio" value="signUp" />
+            <label for="signUp">sign up</label>
+          </div>
+          <div class="login">
+            <input type="radio" id="Login" name="nav-radio" value="Login" />
+            <label for="Login">login</label>
+          </div>
+          <div class="checkOut">
+            <input
+              type="radio"
+              id="checkOut"
+              name="nav-radio"
+              value="checkOut"
+            />
+            <label for="checkOut"
+              ><img src="./images/icons8-trolley-96.png" alt="trolley" /><span>
+                check out</span
+              ></label
+            >
+          </div>
+        </form>
+      </header>
+      <section class="welcomeWord">
+        <h1>Sign up to yourcustomtailor.com</h1>
+        <p>
+          We can't wait to help you improve your life-style and gain the
+          attention from people around you!
+        </p>
+        <p>
+          Sign up below to save up to 70% on apparel, hand-bags and cosmetics.
+          Our agents are busy picking the best offers that match your
+          preferences and style. Every week we will send you a hand-picked
+          selection - we just need to know a few details about your first…
+        </p>
+      </section>
+      <section class="progressPart">
+        <h1>Step 1/4 - tell us who you are?</h1>
+        <div class="progress">
+          <div class="box-bar"><span class="box-per"></span></div>
+        </div>
+        <p>
+          Nice to meet you. Let's spend a minute to get to know each other?
+          Please enter the following:
+        </p>
+      </section>
+      <form
+        action=""
+        method="get"
+        name="mainForm"
+        class="mainForm"
+        autocomplete="on"
+      >
+        <div class="form-1">
+          <div>
+            <span> First name*</span>
+            <input type="text" value="" name="firstName" required />
+          </div>
+          <div>
+            <span>Last name*</span>
+            <input type="text" value="" name="lastName" required />
+          </div>
+        </div>
+        <div class="form-2">
+          <label for="country-choice">Country*</label>
+          <input
+            list="country-names"
+            id="country-choice"
+            name="country-choice"
+            required
+          />
+          <datalist id="country-names">
+            <option value="Denmark"></option>
+            <option value="Sweden"></option>
+            <option value="Norway"></option>
+            <option value="Iceland"></option>
+            <option value="Finland"></option>
+          </datalist>
+        </div>
+        <div class="form-3">
+          <div>
+            <span> Street address*</span>
+            <input type="text" value="" name="firstName" required />
+          </div>
+          <div>
+            <span>Post code*</span>
+            <input
+              type="text"
+              value=""
+              name="lastName"
+              required
+              pattern="[0-9]{4}"
+            />
+          </div>
+        </div>
+        <div class="form-4">
+          <div class="form-4-word">
+            <h2>Profile description</h2>
+            <p>
+              Please provide a short description of yourself to be displayed on
+              our social community pages.
+            </p>
+          </div>
+          <textarea
+            name="profile"
+            rows="15"
+            cols="85"
+            pattern="^.{0,500}$"
+          ></textarea>
+        </div>
+        <div class="form-5">
+          <p>
+            Use the same address for billing and shipping? Uncheck below to fill
+            out a separate shipping address.
+          </p>
+          <div class="form-5-check">
+            <label for="ship-address">Shipping address</label>
+            <input
+              type="checkbox"
+              id="ship-address"
+              name="hip-address"
+              required
+              checked
+            />
+          </div>
+        </div>
+        <div class="form-6">
+          <input type="submit" name="submit" value="Confirm" required />
+          <a href="./index2.html">
+            <input
+              type="button"
+              name="next"
+              value="Next Page"
+              required
+              onclick="window.location.href"
+          /></a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

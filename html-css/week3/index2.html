@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="./styles2.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <img src="./images/icons8-siba-inu-kawaii-240.png" alt="logo" />
+        </div>
+        <form action="" method="get" name="nav" class="nav">
+          <div class="signUp">
+            <input type="radio" id="signUp" name="nav-radio" value="signUp" />
+            <label for="signUp">sign up</label>
+          </div>
+          <div class="login">
+            <input type="radio" id="Login" name="nav-radio" value="Login" />
+            <label for="Login">login</label>
+          </div>
+          <div class="checkOut">
+            <input
+              type="radio"
+              id="checkOut"
+              name="nav-radio"
+              value="checkOut"
+            />
+            <label for="checkOut"
+              ><img src="./images/icons8-trolley-96.png" alt="trolley" /><span>
+                check out</span
+              ></label
+            >
+          </div>
+        </form>
+      </header>
+      <section class="welcomeWord">
+        <h1>Sign up to yourcustomtailor.com</h1>
+      </section>
+      <section class="progressPart">
+        <h1>Step 2/4 - how can we reach you??</h1>
+        <div class="progress">
+          <div class="box-bar"><span class="box-per"></span></div>
+        </div>
+        <p>
+          We will probably need to stay in touch somehow. Let is know how we can
+          reach you?
+        </p>
+      </section>
+      <form
+        action=""
+        method="get"
+        name="mainForm"
+        class="mainForm"
+        autocomplete="on"
+      >
+        <div class="form-1">
+          <div>
+            <span> Email*</span>
+            <input
+              type="email"
+              value=""
+              name="email"
+              required
+              pattern="^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"
+            />
+          </div>
+          <div>
+            <span>Phone</span>
+            <input
+              type="tel"
+              value=""
+              name="phone"
+              pattern="^(\(\d{3,4}-)|\d{3.4}-)?\d{7,8}$"
+            />
+          </div>
+        </div>
+        <div class="form-2">
+          <div>
+            <span>Password*</span>
+            <input
+              type="password"
+              value=""
+              name="password"
+              required
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,20}$"
+            />
+          </div>
+          <div>
+            <span>Re-enter Password*</span>
+            <input
+              type="password"
+              value=""
+              name="repassword"
+              required
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,20}$"
+            />
+          </div>
+        </div>
+        <div class="form-3">
+          <p>I want to sign up for the newsletter</p>
+          <div class="form-3-check">
+            <div class="weekly">
+              <label for="weekly">Weekly news</label>
+              <input
+                type="radio"
+                id="weekly"
+                name="form-3-radio"
+                value="weekly"
+                checked
+              />
+            </div>
+            <div class="monthly">
+              <label for="monthly">Monthly news</label>
+              <input
+                type="radio"
+                id="monthly"
+                name="form-3-radio"
+                value="monthly"
+              />
+            </div>
+            <div class="no">
+              <label for="no">Don't send me news</label>
+              <input type="radio" id="no" name="form-3-radio" value="no" />
+            </div>
+          </div>
+        </div>
+        <div class="form-4">
+          <a href="./index1.html">
+            <input
+              type="button"
+              name="next"
+              value="Go Back"
+              required
+              onclick="window.location.href"
+          /></a>
+          <input type="submit" name="submit" value="Confirm" required />
+          <a href="./index3.html">
+            <input
+              type="button"
+              name="next"
+              value="Next Page"
+              required
+              onclick="window.location.href"
+          /></a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
