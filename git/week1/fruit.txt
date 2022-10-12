@@ -1,3 +1,4 @@
 juice
 apple
 banana
+pear
