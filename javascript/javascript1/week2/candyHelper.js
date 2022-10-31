@@ -14,9 +14,9 @@ function addCandy(candyType, weight) {
       amountShouldPay += boughtCandyPrices[i];
     }
     if (amountToSpend >= amountShouldPay) {
-      alert("You can buy more, so please do!");
+      console.log("You can buy more, so please do!");
     } else {
-      alert("Enough candy for you!");
+      aconsole.log("Enough candy for you!");
     }
   }
   canBuyMoreCandy();
