@@ -8,7 +8,7 @@ console.log(fullname2);
 
 /* Formal fullname */
 
-function getFormalFullname(firstname, surname, useFormalName = true) {
+function getFormalFullname(firstname, surname, useFormalName) {
   if (useFormalName === true) {
     return "Lord " + firstname + surname;
   } else {
@@ -40,3 +40,13 @@ function getSexFormalFullname(firstname, surname, useFormalName, female) {
 }
 const fullname6 = getSexFormalFullname("Donna ", "Strickland", true, true);
 console.log(fullname6);
+/* change for the comment */
+function getFullname(firstname, surname, useFormalName, gender) {
+  if (useFormalName && gender === "male") {
+    return `Lord ${firstname} ${surname}`;
+  } else if (useFormalName && gender === "female") {
+    return `Lady ${firstname} ${surname}`;
+  } else {
+    return `${firstname} ${surname}`;
+  }
+}
