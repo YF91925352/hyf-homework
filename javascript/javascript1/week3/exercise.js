@@ -18,12 +18,14 @@ const travelInformation = {
   speed: 50,
   destinationDistance: 432,
 };
-const hour = parseInt(
-  travelInformation.destinationDistance / travelInformation.speed
-);
-const minutes = travelInformation.destinationDistance % travelInformation.speed;
-const travelTime = `${hour} hours and ${minutes} minutes`;
-console.log(travelTime);
+function calculateTime(travelInformation) {
+  const travelTimeHour =
+    travelInformation.destinationDistance / travelInformation.speed;
+  const hour = Math.floor(travelTimeHour);
+  const minutes = Math.floor((travelTimeHour - hour) * 60);
+  return `${hour} hours and ${minutes} minutes`;
+}
+console.log(calculateTime(travelInformation));
 
 /* Series duration of my life */
 const seriesDurations = [
