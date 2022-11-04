@@ -48,9 +48,9 @@ const seriesDurations = [
     minutes: 24,
   },
 ];
-const percentageInLife = [];
-let totalTime = 0;
+
 function logOutSeriesText() {
+  let totalTime = 0;
   for (i = 0; i < seriesDurations.length; i++) {
     let percentage =
       ((seriesDurations[i].days +
@@ -58,12 +58,9 @@ function logOutSeriesText() {
         seriesDurations[i].minutes / (24 * 60)) /
         (80 * 360)) *
       100;
-    percentageInLife.push(percentage);
-    totalTime += percentageInLife[i];
+    totalTime += percentage;
     console.log(
-      `${seriesDurations[i].title} took ${percentageInLife[i].toFixed(
-        3
-      )}% of my life`
+      `${seriesDurations[i].title} took ${percentage.toFixed(3)}% of my life`
     );
   }
   console.log(`In total that is ${totalTime.toFixed(2)}% of my life`);
