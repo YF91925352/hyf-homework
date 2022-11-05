@@ -4,9 +4,10 @@ function addActivity(date, activity, duration) {
   activities.push({ date, activity, duration });
 }
 /* get and format today date automaticly*/
-addActivity(new Date().toLocaleDateString("en-GB"), "youtube", 40);
-addActivity(new Date().toLocaleDateString("en-GB"), "bilibili", 50);
-addActivity(new Date().toLocaleDateString("en-GB"), "twitter", 20);
+const today = new Date().toLocaleDateString("en-GB");
+addActivity(today, "youtube", 40);
+addActivity(today, "bilibili", 50);
+addActivity(today, "twitter", 20);
 addActivity("31/10/2022", "ins", 20);
 console.log(activities);
 
@@ -26,21 +27,15 @@ function showStatus(activities) {
     },
     initialValue);
     console.log(
-      `You have added ${
-        activitiesSpecifyDate.length
-      } activities on ${new Date().toLocaleDateString(
-        "en-GB"
-      )}. They amount to ${sumDuration} min. of usage`
+      `You have added ${activitiesSpecifyDate.length} activities on ${today}. They amount to ${sumDuration} min. of usage`
     );
     /* Usage limit */
-    function showStatus(limitTime) {
+    function showLimitTime(limitTime) {
       return limitTime > sumDuration
-        ? `Today is ${new Date().toLocaleDateString(
-            "en-GB"
-          )}.You have reached your limit, no more smartphoning for you!`
-        : `${new Date().toLocaleDateString("en-GB")}.You can play more time`;
+        ? `Today is ${today}.You have reached your limit, no more smartphoning for you!`
+        : `${today}.You can play more time`;
     }
-    console.log(showStatus(120));
+    console.log(showLimitTime(120));
   } else {
     console.log(`Add some activities before calling showStatus`);
   }
