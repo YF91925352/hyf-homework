@@ -13,15 +13,10 @@ saveNote("Wash dishes", 7);
 console.log(notes);
 
 /* Get a note */
-function getNote(id) {
-  for (let element of notes) {
-    if (id === element.id) {
-      return element.content;
-    }
-  }
-  return `error`;
+function getNote(element) {
+  return element.id === 5;
 }
-const firstNote = getNote(5);
+const firstNote = notes.find(getNote);
 console.log(firstNote);
 
 /* Log out notes */
@@ -34,15 +29,10 @@ function logOutNotesFormatted() {
 }
 logOutNotesFormatted();
 
-/* Unique feature */
-let invalidContent = 0;
-function filterByContent(item) {
-  if (item.content) {
-    return true;
-  }
-  invalidContent++;
-  return false;
+function filterByContent(valid, notes) {
+  return valid
+    ? notes.filter((element) => typeof element.content === "string")
+    : notes.filter((element) => typeof element.content !== "string");
 }
-const notesByContent = notes.filter(filterByContent);
-console.log(notesByContent);
-console.log(invalidContent++);
+console.log(filterByContent(true, notes));
+console.log(filterByContent(false, notes));
