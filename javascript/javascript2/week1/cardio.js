@@ -21,6 +21,7 @@ function findDanishLetters() {
         : (countLetters[element] = 1);
     }
   }
-  console.log(countLetters);
+  console.log(typeof countLetters);
 }
+
 findDanishLetters(danishString);
