@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <!-- warm up -->
+    <input type="button" value="click" />
+    <input type="button" value="Log location" />
+    <p id="location"></p>
+    <p id="click"></p>
+    <!-- fastest pressers -->
+    <div class="game">
+      <input
+        type="number"
+        placeholder="set the time"
+        min="0"
+        step="5"
+        max="180"
+      /><br />
+      <input type="button" value="start/continue" />
+      <input type="button" value="restart" />
+      <input type="button" value="pause game" />
+      <br />
+      <p id="countdown"></p>
+      <div class="gameBox">
+        <div class="pressS">Press S</div>
+        <div class="pressL">Press L</div>
+      </div>
+    </div>
+    <script src="warmUp.js"></script>
+    <script src="fastestPressers.js"></script>
+  </body>
+</html>
