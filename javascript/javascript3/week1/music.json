@@ -1,0 +1,12 @@
+{
+  "music": [
+    { "singer": "Meghan Trainor", "album": "Takin' It Back", "year": 2022 },
+    { "singer": "Taylor Swift", "album": "Midnights", "year": 2022 },
+    { "singer": "Blackpink", "album": "Kill This Love", "year": 2019 },
+    {
+      "singer": "The Everly Brothers",
+      "album": "Too Good to Be Truek",
+      "year": 2005
+    }
+  ]
+}
