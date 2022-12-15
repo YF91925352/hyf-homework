@@ -1,9 +1,14 @@
 const countdown = document.getElementById("countdown");
-const pressS = document.querySelector(".pressS");
-const pressL = document.querySelector(".pressL");
-/* const confettiElementS = document.getElementById("canvasS");
+const pressS = document.querySelector("#pressS");
+const pressL = document.querySelector("#pressL");
+const confettiElementS = document.getElementById("canvasS");
 const confettiSettingsS = { target: confettiElementS };
-const confettiS = new ConfettiGenerator(confettiSettingsS); */
+console.log(confettiSettingsS);
+const confettiS = new ConfettiGenerator(confettiSettingsS);
+const confettiElementL = document.getElementById("canvasL");
+const confettiSettingsL = { target: confettiElementL };
+console.log(confettiSettingsL);
+const confettiL = new ConfettiGenerator(confettiSettingsL);
 let countTime = "0";
 let flag;
 let countS = 0;
@@ -60,10 +65,11 @@ document.addEventListener("keyup", (e) => {
     pressL.innerHTML = `Press L  ${countL}`;
   }
   if (countS > countL && countTime === 0 && flag) {
-    /*   confettiS.render(); */
+    confettiS.render();
     pressS.innerHTML = `Press S  ${countS} You win`;
     pressL.innerHTML = `Press L  ${countL} You lose`;
   } else if (countS < countL && countTime === 0 && flag) {
+    confettiL.render();
     pressS.innerHTML = `Press S  ${countS}  You lose`;
     pressL.innerHTML = `Press L  ${countL}  You win`;
   } else if (countS === countL && countTime === 0 && flag) {
