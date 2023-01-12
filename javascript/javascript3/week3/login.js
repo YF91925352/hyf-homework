@@ -5,33 +5,31 @@ const inputPwd = document.getElementById("input-pwd");
 const buttonSignUP = document.getElementById("signup-button");
 const buttonLogin = document.getElementById("login-button");
 
-let postUsername;
-let postPassword;
-let flagSignUP = true;
-let flagLogin = false;
 const isValidUsername = (userName) => {
   const patrn_username = /^[\u4E00-\u9FA5A-Za-z0-9_]+$/;
-  if (!patrn_username.exec(userName)) {
+  if (!patrn_username.test(userName)) {
     alert("Valid user names allow Chinese, English, numbers and underscores");
+    return false;
   } else {
-    postUsername = userName;
+    return true;
   }
 };
 const isValidPassword = (pwd) => {
   const patrn_pwd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$/;
-  if (!patrn_pwd.exec(pwd)) {
+  if (!patrn_pwd.test(pwd)) {
     alert(
       "Password must contain a combination of upper and lower case letters and numbers, no special characters, length between 8 and 10"
     );
+    return false;
   } else {
-    postPassword = pwd;
+    return true;
   }
 };
 const createLoginUrl = async () => {
   const body = {
-    userName: postUsername.toLowerCase(),
+    userName: inputUsername.value.toLowerCase(),
     email: inputEmail.value.toLowerCase(),
-    password: postPassword.toLowerCase(),
+    password: inputPwd.value.toLowerCase(),
   };
   const response = await fetch(`${Basic_URL_Login}/Login`, {
     method: "POST",
@@ -44,56 +42,49 @@ const createLoginUrl = async () => {
   const data = await response.json();
   console.log(data);
 };
-const isrepeatedUserName = async () => {
+const isavailableUserName = async (username) => {
   const response = await fetch(`${Basic_URL_Login}/Login`);
   const data = await response.json();
   console.log(data);
-  data.forEach((el) => {
-    if (el.userName === postUsername.toLowerCase()) {
-      alert("This name has been used");
-      flagSignUP = false;
-    }
-  });
-  if (flagSignUP) {
-    createLoginUrl();
+  const isUsed = data.some((el) => el.userName === username.toLowerCase());
+  if (isUsed) {
+    alert("This name has been used");
+    return false;
+  } else {
+    return true;
   }
 };
-
-const handleCreateLoginForm = (e) => {
-  e.preventDefault();
-  isValidUsername(inputUsername.value);
-  isValidPassword(inputPwd.value);
-  isrepeatedUserName();
-};
-
-const handleLogin = async (e) => {
-  e.preventDefault();
-  isValidUsername(inputUsername.value);
-  isValidPassword(inputPwd.value);
+const isSignedUp = async () => {
   const response = await fetch(`${Basic_URL_Login}/Login`);
   const data = await response.json();
-  data.forEach((el) => {
-    if (
-      el.userName === postUsername.toLowerCase() &&
+  const isSignedUp = data.some((el) => {
+    return (
+      el.userName === inputUsername.value.toLowerCase() &&
       el.email === inputEmail.value.toLowerCase() &&
-      el.password === postPassword.toLowerCase()
-    ) {
-      flagLogin = true;
-    }
+      el.password === inputPwd.value.toLowerCase()
+    );
   });
-  if (flagLogin) {
+  if (isSignedUp) {
     window.location.href = "app.html";
   } else {
     alert("You should sign up first");
   }
 };
+const handleCreateLoginForm = async (e) => {
+  isValidUsername(inputUsername.value) &&
+    isValidPassword(inputPwd.value) &&
+    isavailableUserName(inputUsername.value) &&
+    createLoginUrl();
+};
 
-buttonSignUP.addEventListener("click", (e) => {
-  handleCreateLoginForm(e);
-});
-buttonLogin.addEventListener("click", (e) => {
-  handleLogin(e);
-});
+const handleLogin = async (e) => {
+  isValidUsername(inputUsername.value) &&
+    isValidPassword(inputPwd.value) &&
+    isSignedUp();
+};
+
+buttonSignUP.addEventListener("click", handleCreateLoginForm);
+buttonLogin.addEventListener("click", handleLogin);
 
 /* delete url
 const deleteUrl = async (id) => {
